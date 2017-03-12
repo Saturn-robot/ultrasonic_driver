@@ -1,8 +1,16 @@
-/*
- Name:		Test_DC_motor.ino
- Created:	7/22/2016 8:56:52 PM
- Author:	Chaoyang Liu
-*/
+/***********************************************************************
+ * Ultrasonic HC-SR04 driver
+ *
+ * Author: Chaoyang Liu
+ * E-main: chaoyanglius@outlook.com
+ *
+ * Inspired and modeled after the Pirobot driver by Patrick Goebel
+ *
+ * Software License Agreement (GPL License)
+ * Copyright (c) 2017, Chaoyang Liu
+ *
+ ************************************************************************/
+
 #include "ultrasonic.h"
 #include "command.h"
 
@@ -38,13 +46,13 @@ void resetCommand() {
 int runCommand() {
 	byte i;
 	arg1 = atoi(argv1);
-        arg2 = atoi(argv2);
-        arg3 = atoi(argv3);
-        arg4 = atoi(argv4);
+  arg2 = atoi(argv2);
+  arg3 = atoi(argv3);
+  arg4 = atoi(argv4);
 
 	switch (cmd) {
 		case ULTRASONIC:
-      Serial.println(ultrasonic());
+      Serial.println(get_distance());
 			break;
 		default:
 			Serial.println(F("Invalid Command"));

@@ -1,4 +1,6 @@
-
+/***********************************************************
+ * Ultrasonic HC-SR04 driver definitions - by Chaoyang Liu
+ ***********************************************************/
 void init_ultrasonic() {
   pinMode(EchoPin,INPUT);
   pinMode(TrigPin,OUTPUT);
@@ -12,7 +14,7 @@ float microsecondsToCm(long microseconds)
   return microseconds / 29 / 2;
 }
 
-long ultrasonic() {
+long get_distance() {
   long duration, range;
 
   digitalWrite(TrigPin,HIGH);
